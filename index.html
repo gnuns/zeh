@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>zeh</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="hezag">
+
+    <link rel="stylesheet" href="css/kube.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="misc/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/zeh.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="misc/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="misc/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script src="js/zeh.js"></script>
+
+
+</head>
+<body>
+    <div id="pluswrap" style="display:none">
+      <div class="plus">
+        <i class="fa fa-spinner fa-pulse"></i>
+      </div>
+    </div>
+    <div class="wrap content">
+        <div class="z-header">
+            <div class="logo" onclick="window.location = './'">
+                zeh
+            </div>
+            <div class="search">
+                <form action="" onsubmit="javascript:zeh.search(); return false;" class="forms">
+                    <div class="btn-append">
+                        <input type="text" name="search" placeholder="search" />
+                        <span>
+                            <button class="btn" type="black">search</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="z-content" id="z-results">
+            <table class="table-stripped table-responsive table-simple">
+                <thead>
+                    <tr>
+                        <th>Poster</th>
+                        <th>Year</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="z-results-content">
+                </tbody>
+            </table>
+            <button class="right" type="black">load more</button>
+        </div>
+        <div class="z-content" id="z-content-card">
+            <div class="movie-card">
+              <div class="container">
+
+                <a href="#lusdaf" class="fancybox">
+                    <img id="z-c-poster" src="http://ia.media-imdb.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX300.jpg" alt="cover" class="cover">
+                </a>
+
+                <div class="hero">
+
+                  <div class="details">
+
+                    <div class="title1" id="z-c-title"></div>
+
+                    <div class="title2" id="z-c-year"></div>
+
+                  </div> <!-- end details -->
+
+                </div> <!-- end hero -->
+
+                <div class="description">
+
+                  <div class="column1"  id="z-c-tags">
+                    <span class="tag">action</span>
+                    <span class="tag">fantasy</span>
+                    <span class="tag">adventure</span>
+                  </div> <!-- end column1 -->
+
+                  <div class="column2">
+
+                    <p  id="z-c-desc">
+                    </p>
+                    <button type="black" id="z-torrent-button" class="width-6 right" style="margin-top:15px">
+                        Get Movie Torrents
+                    </button>
+                  </div> <!-- end column2 -->
+                </div> <!-- end description -->
+                <table class="table-stripped" id="z-torrent-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Magnet</th>
+                        </tr>
+                    </thead>
+                    <tbody  id="z-torrent-table-contents">
+                        <tr>
+                            <td>Jill</td>
+                            <td><a href=""><i class="fa fa-magnet"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div> <!-- end container -->
+            </div> <!-- end movie-card -->
+        </div>
+    </div>
+</body>
+</html>
