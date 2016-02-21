@@ -1,11 +1,11 @@
 var zeh = {
     search: function(){
         var query = $("[name=search]").val();
-        //alert(query);
+
         $('.z-content').fadeOut();
         $('#z-results').fadeIn();
         $('#pluswrap').fadeIn();
-        //http://www.omdbapi.com/?s=
+
 
         $.getJSON('http://www.omdbapi.com/?s=' + encodeURIComponent(query) + '&callback=?', function(data){
             $("#z-results-content").html("");
