@@ -44,14 +44,14 @@ var zeh = {
             }
             $('#z-torrent-button').on('click', function(){
                 $('#pluswrap').fadeIn();
-                $.getJSON('https://allorigins.pw/get?url=' + encodeURIComponent('https://kat.cr/usearch/'+encodeURIComponent(data.Title + ' ' + data.Year)+'/') + '&callback=?', function(data){
-                    //var torrents = $(data.contents).find( "tr[id^=torrent_]" );
-                    var torrents = $(data.contents).find( "[data-sc-replace]" );
+                $.getJSON('https://allorigins.us/get?url=' + encodeURIComponent('https://thepiratebay.org/search/'+encodeURIComponent(data.Title + ' ' + data.Year)+'/'), function(data){
+                    var torrents = $(data.contents).find( "#searchResult>tbody>tr" );
                     $('#z-torrent-table-contents').html('');
                     $(torrents).each(function(){
-                        var params = JSON.parse($(this).attr('data-sc-params').replace(new RegExp("'", 'g'), '"').toString());
-
-                        $('#z-torrent-table-contents').append('<tr> <td>'+decodeURIComponent(params.name)+'</td> <td><a href="'+params.magnet+'"><i class="fa fa-magnet"></i></a></td> </tr>');
+                      var links = $(this).find("td").eq(1).find("a");
+                      var name = links.eq(0).text();
+                      var magnet = links.eq(1).attr('href');
+                      $('#z-torrent-table-contents').append('<tr> <td>'+name+'</td> <td><a href="'+magnet+'"><i class="fa fa-magnet"></i></a></td> </tr>');
 
                     });
                     $('#pluswrap').fadeOut();
